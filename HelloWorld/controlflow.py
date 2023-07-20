@@ -104,8 +104,19 @@ while number > 0:
 
 
 # Avoid infinite loop by breaking if the word quit is input
-while True:
-    command = input("Enter Input: ")
-    print("ECHO", command)
-    if command.lower() == "quit":
-        break
+# while True:
+#     command = input("Enter Input: ")
+#     print("ECHO", command)
+#     if command.lower() == "quit":
+#         break
+
+
+# Quiz: Print  2, 4, 6, 8 and then We have 4 even numbers
+count = 0
+
+for number in range(1, 10):
+    if number % 2 == 0:
+        print(number)
+        count += 1
+
+print(f"We have {count} even numbers")
