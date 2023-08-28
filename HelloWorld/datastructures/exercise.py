@@ -1,6 +1,6 @@
 sentence = "This is a common interview question"
 
-# Find the most repeate character in the sentence - common interview question
+# Find the most repeate character in the sentence - common interview question.
 
 # Questions to ask: Are capitalized chars and spaces counted? Should they be lower case.
 
