@@ -4,6 +4,8 @@ from abc import ABC, abstractmethod
 class InvalidOpetationError(Exception):
     pass
 
+# Base Class
+
 
 class Stream(ABC):
     def __init__(self):
@@ -22,6 +24,8 @@ class Stream(ABC):
     @abstractmethod  # does not get implemented but is used to tell other classes that they require a read() method
     def read(self):
         pass
+
+# Children
 
 
 class FileStream(Stream):
