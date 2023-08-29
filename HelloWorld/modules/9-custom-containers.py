@@ -35,4 +35,4 @@ cloud1.add("python")
 
 # print(cloud1.__tags) ##This would no longer work because its private
 print(cloud1.__dict__)  # prints {'_TagCloud__tags': {'python': 5, 'java': 1}}
-print(cloud1._TagCloud__tags)
+print(cloud1._TagCloud__tags)  # prints {'python': 5, 'java': 1}
