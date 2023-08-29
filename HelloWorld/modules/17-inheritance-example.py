@@ -19,7 +19,7 @@ class Stream(ABC):
             raise InvalidOpetationError("Stream is already closed")
         self.opened = False
 
-    @abstractmethod
+    @abstractmethod  # does not get implemented but is used to tell other classes that they require a read() method
     def read(self):
         pass
 
@@ -35,13 +35,29 @@ class NetworkStream(Stream):
 
 
 class MemoryStream(Stream):
+    def read(self):
+        print("Reading data from Memory")
 
 
-    # stream0 = Stream() #You should not be able to create a Stream object, only a FileStream, MemoryStream and NetworkStream
+def read(streams):
+    for stream in streams:
+        stream.read()
+
+    # stream0 = Stream() #You should not be able to create a Stream object, only a FileStream, MemoryStream and NetworkStream AND you will not be able to create these if they don't have a read(method)
     # stream0.open()
     # stream0.open()
+# stream1 = FileStream()
+# stream1.read()
+
+# stream2 = MemoryStream()
+# stream2.read()
+
+
+# Example of polymorphism would be to loop through a list of streams (different Classes),
+# and tell them to use their version of the read() method
+# They would all be done at the same time BUT print out something different because they're performing the function of their version of the read method
 stream1 = FileStream()
-stream1.read()
-
 stream2 = MemoryStream()
-stream2.read()
+stream3 = NetworkStream()
+
+read([stream1, stream2, stream3])
